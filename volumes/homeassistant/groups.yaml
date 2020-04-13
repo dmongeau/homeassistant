@@ -1,0 +1,19 @@
+lampeslouis:
+  name: Chambre Louis Lampes
+  entities:
+    - light.lecture_chambre_louis
+    - light.table_a_langer
+salon_divan_duo:
+  name: Divan Duo
+  entities:
+    - light.divan_1
+    - light.divan_2
+  all: on
+  icon: mdi:ceiling-light
+play_duo:
+  name: Play Lights Duo
+  entities:
+    - light.play_light_left
+    - light.play_light_right
+  all: on
+  icon: mdi:car-parking-lights

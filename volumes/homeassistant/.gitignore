@@ -4,6 +4,7 @@
 # Storage and DBs
 .storage
 .cloud
+.HA_VERSION
 *.db
 *.sqlite
 *.xml

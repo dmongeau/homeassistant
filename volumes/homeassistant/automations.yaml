@@ -1,0 +1,213 @@
+- alias: Set clear theme at startup
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: clear
+  id: cab6dc11be924f6e8ae90284096a41b7
+- id: '1579394884792'
+  alias: TV Time when TV is turned on
+  description: ''
+  trigger:
+  - entity_id: media_player.sony_bravia_tv
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+    service: scene.turn_on
+    entity_id: scene.tv_time
+- id: '1580255118149'
+  alias: Turn on Balcon when Hélène or François gets Home
+  description: ''
+  trigger:
+  - entity_id: person.francois_cote
+    event: enter
+    platform: zone
+    zone: zone.home
+  - entity_id: person.helene_duquette
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition:
+  - after: sunset
+    after_offset: -00:30:00
+    condition: sun
+  action:
+  - data: {}
+    service: script.1580383970165
+- id: '1580435903903'
+  alias: Sync Sous-sol
+  description: Sync Sous-sol lights with the Escalier
+  trigger:
+  - entity_id: switch.escalier_sous_sol
+    platform: state
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.neons_salle_de_lavage
+    service_template: switch.turn_{{trigger.to_state.state}}
+  - data: {}
+    entity_id: light.sous_sol_salle_de_jeu
+    service_template: light.turn_{{trigger.to_state.state}}
+- id: '1580437112393'
+  alias: Sunset - Présents
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:15:00
+    platform: sun
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: person.francois_cote
+      state: home
+    - condition: state
+      entity_id: person.helene_duquette
+      state: home
+  action:
+  - scene: scene.partout_sunset_present
+- id: '1580438048344'
+  alias: Sunset - Absents
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:15:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: person.francois_cote
+    state: not_home
+  - condition: state
+    entity_id: person.helene_duquette
+    state: not_home
+  action:
+  - scene: scene.partout_sunset_absents
+  - data:
+      message: Partout Absents
+      title: Scene Activated
+    service: notify.mobile_app_pixel_3
+- id: '1583927024094'
+  alias: Tradfri ON Long
+  description: ''
+  trigger:
+  - device_id: 4025e865600244439dad6821be15a7f1
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - scene: scene.partout_sunset_present
+- id: '1583927080943'
+  alias: TRADFRI ON Short
+  description: ''
+  trigger:
+  - device_id: 4025e865600244439dad6821be15a7f1
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_short_press
+  condition: []
+  action:
+  - data: {}
+    entity_id: script.1586208826829
+    service: script.turn_on
+- id: '1583927188974'
+  alias: TRADFRI Left
+  description: ''
+  trigger:
+  - device_id: 4025e865600244439dad6821be15a7f1
+    domain: deconz
+    platform: device
+    subtype: left
+    type: remote_button_short_press
+  condition: []
+  action:
+  - scene: scene.matin
+  - scene: scene.louis_matin
+- id: '1583935327569'
+  alias: TRADFRI Dim Up
+  description: ''
+  trigger:
+  - device_id: 4025e865600244439dad6821be15a7f1
+    domain: deconz
+    platform: device
+    subtype: dim_up
+    type: remote_button_short_press
+  condition: []
+  action:
+  - device_id: 26e0fa6633bf4a6288b86db93dfad387
+    domain: light
+    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level
+    type: brightness_increase
+- id: '1583935442019'
+  alias: TRADFRI Dim Down
+  description: ''
+  trigger:
+  - device_id: 4025e865600244439dad6821be15a7f1
+    domain: deconz
+    platform: device
+    subtype: dim_down
+    type: remote_button_short_press
+  condition: []
+  action:
+  - device_id: 26e0fa6633bf4a6288b86db93dfad387
+    domain: light
+    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level
+    type: brightness_decrease
+- id: '1586196993886'
+  alias: Aurora Louis Toggle
+  description: ''
+  trigger:
+  - event_data:
+      event: 1002
+      id: friends_of_hue_dimmer
+    event_type: deconz_event
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: group.lampeslouis
+    service: homeassistant.toggle
+- id: '1586201636259'
+  alias: Aurora Louis UP
+  description: ''
+  trigger:
+  - event_data:
+      event: 2002
+      id: friends_of_hue_dimmer
+    event_type: deconz_event
+    platform: event
+  condition: []
+  action:
+  - device_id: 21bdac747cb44f05b1e2735400a9531c
+    domain: light
+    entity_id: light.table_a_langer
+    type: brightness_increase
+  - device_id: a26d66cb36bf49eb8441fc79f5a63f9e
+    domain: light
+    entity_id: light.lecture_chambre_louis
+    type: brightness_increase
+- id: '1586201744355'
+  alias: Aurora Louis DOWN
+  description: ''
+  trigger:
+  - event_data:
+      event: 3002
+      id: friends_of_hue_dimmer
+    event_type: deconz_event
+    platform: event
+  condition: []
+  action:
+  - device_id: 21bdac747cb44f05b1e2735400a9531c
+    domain: light
+    entity_id: light.table_a_langer
+    type: brightness_decrease
+  - device_id: a26d66cb36bf49eb8441fc79f5a63f9e
+    domain: light
+    entity_id: light.lecture_chambre_louis
+    type: brightness_decrease

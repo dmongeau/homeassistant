@@ -1,0 +1,229 @@
+title: 620 Ball
+resources:
+  - url: hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
+    type: module
+  - url: hacsfiles/rgb-light-card/card.js
+    type: js
+views:
+  - badges: []
+    cards:
+      - cards:
+          - entity: script.1586208826829
+            hold_action:
+              action: more-info
+            icon: "mdi:brightness-2"
+            icon_height: 50px
+            name: "Off"
+            show_icon: true
+            show_name: true
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.turn_off_all
+            type: entity-button
+          - entity: scene.matin
+            hold_action:
+              action: more-info
+            icon: "mdi:brightness-6"
+            icon_height: 50px
+            show_icon: true
+            show_name: true
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.matin
+            type: entity-button
+          - entity: scene.partout_sunset_present
+            hold_action:
+              action: more-info
+            icon: "mdi:brightness-5"
+            icon_height: 50px
+            name: "On"
+            show_icon: true
+            show_name: true
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.partout_sunset_present
+            type: entity-button
+        title: Scènes
+        type: horizontal-stack
+      - type: horizontal-stack
+        cards:
+          - type: "custom:mini-graph-card"
+            entities:
+              - entity: sensor.wink_relay_sensor_temperature
+                name: Temperature
+                index: 0
+            name: Temperature
+            animate: true
+          - type: "custom:mini-graph-card"
+            entities:
+              - entity: sensor.wink_relay_sensor_humidity
+                name: Humidity
+                index: 0
+            line_color: mediumaquamarine
+            name: Humidity
+            icon: "mdi:water-outline"
+            animate: true
+      - entity: weather.620_ball
+        type: weather-forecast
+    icon: "mdi:home"
+    panel: false
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - title: Chambre à coucher
+        type: entities
+        show_header_toggle: false
+        entities:
+          - entity: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level
+      - title: Chambre Louis
+        type: entities
+        show_header_toggle: false
+        entities:
+          - entity: light.table_a_langer
+          - entity: light.table_a_langer
+            type: "custom:rgb-light-card"
+            justify: center
+            colors:
+              - rgb_color:
+                  - 255
+                  - 129
+                  - 1
+                brightness: 45
+                icon_color: "linear-gradient(#c7770d, #732607)"
+          - entity: light.table_a_langer
+            type: "custom:rgb-light-card"
+            justify: center
+            colors:
+              - rgb_color:
+                  - 255
+                  - 0
+                  - 0
+                brightness: 160
+                icon_color: "red"
+              - rgb_color:
+                  - 255
+                  - 130
+                  - 0
+                brightness: 180
+                icon_color: "orange"
+              - rgb_color:
+                  - 255
+                  - 230
+                  - 0
+                brightness: 200
+                icon_color: "yellow"
+              - rgb_color:
+                  - 120
+                  - 255
+                  - 0
+                brightness: 200
+                icon_color: "lightgreen"
+              - rgb_color:
+                  - 0
+                  - 255
+                  - 190
+                brightness: 200
+                icon_color: "turquoise"
+              - rgb_color:
+                  - 60
+                  - 126
+                  - 255
+                brightness: 200
+                icon_color: "blue"
+              - rgb_color:
+                  - 126
+                  - 16
+                  - 255
+                brightness: 200
+                icon_color: "purple"
+              - rgb_color:
+                  - 255
+                  - 110
+                  - 255
+                brightness: 140
+                icon_color: "pink"
+          - entity: light.lecture_chambre_louis
+          - entity: light.plafond_chambre_louis
+          - type: "custom:rgb-light-card"
+            justify: center
+            colors:
+              - type: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.louis_standard
+                icon_color: "linear-gradient(135deg, #fdfcfb, #e2d1c3)"
+              - type: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.louis_matin
+                icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
+      - entities:
+          - entity: group.salon_divan_duo
+          - entity: light.panthella
+          - entity: light.leviton_dzmx1_1lz_dimmer_level
+        title: Séjour
+        type: entities
+        show_header_toggle: false
+      - entities:
+          - type: "custom:fold-entity-row"
+            head: group.play_duo
+            entities:
+              - entity: light.play_light_left
+                name: Left
+              - entity: light.play_light_right
+                name: Right
+          - entity: light.abat_jour
+          - type: "custom:rgb-light-card"
+            justify: center
+            colors:
+              - type: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.bureau_travail
+                icon_color: "linear-gradient(135deg, #fdfcfb, #e2d1c3)"
+              - type: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.bureau_geek_night
+                icon_color: "linear-gradient(135deg, #ddd6f3, #faaca8)"
+              - type: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.bureau_warm_night
+                icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
+        title: Bureau
+        type: entities
+      - entities:
+          - entity: switch.escalier_sous_sol
+          - entity: switch.neons_salle_de_lavage
+          - entity: light.sous_sol_salle_de_jeu
+        title: Sous-Sol
+        type: entities
+      - entities:
+          - entity: light.balcon_arriere
+        title: Extérieur
+        type: entities
+        show_header_toggle: false
+    icon: "mdi:lightbulb-on"
+    path: lights
+    title: Lights
+  - path: piserver
+    icon: "mdi:server-network"
+    title: PiServer
+    cards:
+      - entities:
+          - entity: binary_sensor.updater
+            name: HA Update
+          - entity: sensor.hacs
+            name: HACS
+        show_name: true
+        type: glance

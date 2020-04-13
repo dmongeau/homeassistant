@@ -1,0 +1,95 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+  customize: !include customize.yaml
+
+discovery:
+  ignore:
+    - google_cast
+    - igd
+
+# HTTPS
+# -----------------------
+http:
+  base_url: ha.francoiscote.net
+  # ip_ban_enabled: true
+  # login_attempts_threshold: 5
+
+# Z-WAVE
+# -----------------------
+zwave:
+  usb_path: /dev/zstick
+  device_config: !include zwave_device_config.yaml
+  network_key: "0x84, 0xC2, 0xC5, 0xC2, 0x3F, 0x25, 0x69, 0x97, 0xD1, 0xD8, 0xD6, 0x69, 0x70, 0x57, 0x60, 0xA2"
+
+# Wemo
+# -----------------------
+wink:
+
+# Wemo
+# -----------------------
+wemo:
+  discovery: false
+  static:
+    - 192.168.86.57
+
+# TV
+# -----------------------
+media_player:
+  - platform: braviatv
+    host: 192.168.86.44
+
+# Device Trackers
+# -----------------------
+device_tracker:
+  - platform: ping
+    hosts:
+      francois_laptop: C02X57PEJG5H.local
+      francois_desktop_linux: manjaro.local
+      francois_desktop_pc: francois.local
+
+# GOOGLE ASSISTANT
+# -----------------------
+google_assistant:
+  project_id: homeassistant-93748
+  service_account:
+    private_key: !secret google_actions_private_key
+    client_email: !secret google_actions_client_email
+  report_state: true
+  exposed_domains:
+    - scene
+    - switch
+    - light
+    - climate
+    - sensor
+  entity_config:
+    light.bureau:
+      expose: false
+    light.salon:
+      expose: false
+    light.chambre_louis:
+      expose: false
+    light.chambre_principale:
+      expose: false
+    light.exterieur:
+      expose: false
+
+# TEXT TO SPEECH
+# -----------------------
+tts:
+  - platform: google_translate
+
+# FRONT-END
+# -----------------------
+frontend:
+  themes: !include_dir_merge_named themes
+lovelace:
+  mode: yaml
+
+# INCLUDES
+# -----------------------
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

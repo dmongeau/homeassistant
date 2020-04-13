@@ -1,0 +1,244 @@
+- id: '1579394851424'
+  name: TV Time
+  entities:
+    group.salon_divan_duo:
+      brightness: 61
+      color_temp: 446
+      state: 'on'
+    light.panthella:
+      brightness: 69
+      color_temp: 454
+      state: 'on'
+- id: '1579813629177'
+  name: Bureau - Geek Night
+  entities:
+    light.abat_jour:
+      brightness: 113
+      friendly_name: Abat-jour
+      icon: mdi:lamp
+      is_deconz_group: false
+      state: 'on'
+      supported_features: 41
+    light.play_light_left:
+      brightness: 205
+      effect_list:
+      - colorloop
+      friendly_name: Play Light Left
+      hs_color:
+      - 254.795
+      - 28.627
+      icon: mdi:car-light-dimmed
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 200
+      - 182
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.286
+      - 0.242
+    light.play_light_right:
+      brightness: 171
+      effect_list:
+      - colorloop
+      friendly_name: Play Light Right
+      hs_color:
+      - 2.195
+      - 32.157
+      icon: mdi:car-light-dimmed
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 175
+      - 172
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.437
+      - 0.323
+- id: '1579822529613'
+  name: Partout - Sunset Présent
+  entities:
+    light.group_salon_divan_duo:
+      all_on: true
+      brightness: 116
+      color_temp: 426
+      effect_list:
+      - colorloop
+      friendly_name: Group - Salon - Divan Duo
+      is_deconz_group: true
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 47
+    light.leviton_dzmx1_1lz_dimmer_level:
+      brightness: 28
+      friendly_name: Table
+      node_id: 5
+      state: 'on'
+      supported_features: 1
+      value_id: '72057594126630913'
+      value_index: 0
+      value_instance: 1
+    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level:
+      brightness: 75
+      friendly_name: Lit
+      node_id: 6
+      state: 'on'
+      supported_features: 1
+      value_id: '72057594143408129'
+      value_index: 0
+      value_instance: 1
+    light.panthella:
+      brightness: 175
+      color_temp: 406
+      friendly_name: Panthella
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+- id: '1580212795429'
+  name: Matin
+  entities:
+    group.play_duo:
+      entity_id:
+      - light.play_light_left
+      - light.play_light_right
+      friendly_name: Play Lights Duo
+      icon: mdi:car-parking-lights
+      order: 2
+      state: 'on'
+    group.salon_divan_duo:
+      entity_id:
+      - light.divan_1
+      - light.divan_2
+      friendly_name: Divan Duo
+      icon: mdi:ceiling-light
+      order: 1
+      state: 'on'
+    light.leviton_dzmx1_1lz_dimmer_level:
+      brightness: 85
+      friendly_name: Table
+      node_id: 5
+      state: 'on'
+      supported_features: 1
+      value_id: '72057594126630913'
+      value_index: 0
+      value_instance: 1
+    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level:
+      brightness: 57
+      friendly_name: Lit
+      node_id: 6
+      state: 'on'
+      supported_features: 1
+      value_id: '72057594143408129'
+      value_index: 0
+      value_instance: 1
+    light.panthella:
+      brightness: 177
+      color_temp: 415
+      friendly_name: Panthella
+      icon: mdi:floor-lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+- id: '1580437954543'
+  name: Partout - Sunset - Absents
+  entities:
+    light.abat_jour:
+      brightness: 194
+      state: 'on'
+    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level:
+      brightness: 57
+      state: 'on'
+    light.panthella:
+      brightness: 183
+      color_temp: 400
+      state: 'on'
+- id: '1580480015072'
+  name: Bureau - Travail
+  entities:
+    light.abat_jour:
+      brightness: 172
+      state: 'on'
+    group.play_duo:
+      brightness: 74
+      color_temp: 372
+      state: 'on'
+- id: '1582932871399'
+  name: Bureau - Warm Night
+  entities:
+    light.abat_jour:
+      brightness: 28
+      state: 'on'
+    group.play_duo:
+      brightness: 114
+      color_temp: 486
+      state: 'on'
+- id: '1586443643979'
+  name: Louis - Standard
+  entities:
+    light.lecture_chambre_louis:
+      brightness: 176
+      color_temp: 405
+      friendly_name: Lecture
+      icon: mdi:floor-lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.table_a_langer:
+      brightness: 144
+      color_temp: 403
+      effect_list:
+      - colorloop
+      friendly_name: Table à Langer
+      icon: mdi:lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+- id: '1586443749250'
+  name: Louis - Matin
+  entities:
+    light.lecture_chambre_louis:
+      brightness: 60
+      color_temp: 454
+      friendly_name: Lecture
+      icon: mdi:floor-lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.table_a_langer:
+      brightness: 65
+      effect_list:
+      - colorloop
+      friendly_name: Table à Langer
+      hs_color:
+      - 41.429
+      - 82.353
+      icon: mdi:lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 190
+      - 44
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.52
+      - 0.437
