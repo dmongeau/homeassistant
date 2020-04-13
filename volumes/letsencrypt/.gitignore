@@ -1,0 +1,7 @@
+# LetsEncrypt
+# -------------------------
+*
+
+!.gitignore
+!nginx/proxy-confs/ha.subdomain.conf
+!nginx/site-confs/default

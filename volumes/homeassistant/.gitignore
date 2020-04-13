@@ -1,0 +1,20 @@
+# HomeAssistant
+# -------------------------
+
+# Storage and DBs
+.storage
+.cloud
+*.db
+*.sqlite
+
+# Logs
+*.log
+OZW_Log.txt
+
+
+# Secrets
+.wink.conf
+bravia.conf
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
