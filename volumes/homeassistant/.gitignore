@@ -6,10 +6,15 @@
 .cloud
 *.db
 *.sqlite
+*.xml
 
 # Logs
 *.log
 OZW_Log.txt
+
+# Custom Components
+custom_components
+www/community
 
 
 # Secrets
