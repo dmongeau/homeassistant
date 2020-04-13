@@ -1,0 +1,55 @@
+version: '3'
+services:
+  homeassistant:
+    image: homeassistant/raspberrypi4-homeassistant:stable
+    restart: unless-stopped
+    volumes:
+      - ./volumes/homeassistant:/config
+    devices:
+      - /dev/conbee
+      - /dev/zstick
+    environment:
+      - TZ=America/New_York
+    depends_on:
+      - letsencrypt
+      - deconz
+
+  deconz:
+    image: marthoc/deconz
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./volumes/deconz:/root/.local/share/dresden-elektronik/deCONZ
+    devices:
+      - /dev/conbee
+    environment:
+      - DECONZ_WEB_PORT=801
+      - DECONZ_WS_PORT=445
+      - DECONZ_VNC_MODE=1
+      - DECONZ_VNC_PORT=5930
+      - DECONZ_VNC_PASSWORD=supersecret
+      - DEBUG_INFO=1
+      - DECONZ_UPNP=0
+      - DECONZ_DEVICE=/dev/conbee
+      - TZ=America/New_York
+    ports:
+      - "801:801"
+      - "5930:5930"
+
+  letsencrypt:
+    image: linuxserver/letsencrypt:arm32v7-latest
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./volumes/letsencrypt:/config
+    environment:
+      - PGID=1001
+      - PUID=1001
+      - EMAIL=francois@francoiscote.net
+      - URL=ha.francoiscote.net
+      - VALIDATION=http
+      - TZ=America/New_York
+    ports:
+      - "443:443"
