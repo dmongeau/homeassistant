@@ -1,7 +1,7 @@
 version: '3'
 services:
   homeassistant:
-    image: homeassistant/raspberrypi4-homeassistant:stable
+    image: homeassistant/raspberrypi4-homeassistant:latest
     restart: unless-stopped
     volumes:
       - ./volumes/homeassistant:/config
@@ -11,7 +11,7 @@ services:
     environment:
       - TZ=America/New_York
     depends_on:
-      - letsencrypt
+      - swag
       - deconz
 
   deconz:
@@ -36,20 +36,24 @@ services:
       - "801:801"
       - "5930:5930"
 
-  letsencrypt:
-    image: linuxserver/letsencrypt:arm32v7-latest
+  swag:
+    image: linuxserver/swag:arm32v7-latest
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./volumes/letsencrypt:/config
+      - ./volumes/swag:/config
     environment:
       - PGID=1001
       - PUID=1001
       - EMAIL=francois@francoiscote.net
       - URL=ha.francoiscote.net
-      - VALIDATION=http
+      - VALIDATION=dns
+      - DNSPLUGIN=route53
       - TZ=America/New_York
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     ports:
       - "443:443"
+      - "80:80"

@@ -6,6 +6,8 @@
 .cloud
 .HA_VERSION
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 *.xml
 

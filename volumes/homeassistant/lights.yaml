@@ -1,0 +1,15 @@
+- name: Chambre Louis Lampes
+  platform: group
+  entities:
+    - light.lecture_chambre_louis
+    - light.table_a_langer
+- name: Divan Duo
+  platform: group
+  entities:
+    - light.divan_1
+    - light.divan_2
+- name: Play Lights Duo
+  platform: group
+  entities:
+    - light.play_light_left
+    - light.play_light_right

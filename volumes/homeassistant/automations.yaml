@@ -15,10 +15,13 @@
     from: 'off'
     platform: state
     to: 'on'
-  condition: []
+  condition:
+  - after: sunset
+    before: sunrise
+    condition: sun
   action:
+  - entity_id: scene.tv_time
     service: scene.turn_on
-    entity_id: scene.tv_time
 - id: '1580255118149'
   alias: Turn on Balcon when Hélène or François gets Home
   description: ''
@@ -140,9 +143,9 @@
     type: remote_button_short_press
   condition: []
   action:
-  - device_id: 26e0fa6633bf4a6288b86db93dfad387
+  - device_id: 8f02ab3dae364433b47889b857abfc9a
     domain: light
-    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level
+    entity_id: light.abat_jour
     type: brightness_increase
 - id: '1583935442019'
   alias: TRADFRI Dim Down
@@ -155,9 +158,9 @@
     type: remote_button_short_press
   condition: []
   action:
-  - device_id: 26e0fa6633bf4a6288b86db93dfad387
+  - device_id: 8f02ab3dae364433b47889b857abfc9a
     domain: light
-    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level
+    entity_id: light.abat_jour
     type: brightness_decrease
 - id: '1586196993886'
   alias: Aurora Louis Toggle
@@ -171,7 +174,7 @@
   condition: []
   action:
   - data: {}
-    entity_id: group.lampeslouis
+    entity_id: light.chambre_louis_lampes
     service: homeassistant.toggle
 - id: '1586201636259'
   alias: Aurora Louis UP
