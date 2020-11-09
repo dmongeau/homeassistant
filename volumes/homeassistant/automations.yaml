@@ -143,10 +143,11 @@
     type: remote_button_short_press
   condition: []
   action:
-  - device_id: 8f02ab3dae364433b47889b857abfc9a
+  - type: brightness_increase
+    device_id: 7b79b797e33a4f178e929819349e2a4c
+    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
     domain: light
-    entity_id: light.abat_jour
-    type: brightness_increase
+  mode: single
 - id: '1583935442019'
   alias: TRADFRI Dim Down
   description: ''
@@ -158,10 +159,11 @@
     type: remote_button_short_press
   condition: []
   action:
-  - device_id: 8f02ab3dae364433b47889b857abfc9a
+  - type: brightness_decrease
+    device_id: 7b79b797e33a4f178e929819349e2a4c
+    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
     domain: light
-    entity_id: light.abat_jour
-    type: brightness_decrease
+  mode: single
 - id: '1586196993886'
   alias: Aurora Louis Toggle
   description: ''

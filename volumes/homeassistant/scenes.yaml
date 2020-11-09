@@ -22,92 +22,48 @@
 - id: '1579813629177'
   name: Bureau - Geek Night
   entities:
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
-      brightness: 54
-      friendly_name: Bureau Hélène
-      icon: mdi:laptop
-      node_id: 6
-      state: 'on'
-      supported_features: 1
-      value_id: '72057594143408129'
-      value_index: 0
-      value_instance: 1
     light.play_light_left:
-      brightness: 205
+      min_mireds: 153
+      max_mireds: 500
       effect_list:
       - colorloop
-      friendly_name: Play Light Left
+      brightness: 161
       hs_color:
-      - 254.795
-      - 28.627
-      icon: mdi:car-light-dimmed
-      is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
+      - 269.725
+      - 42.745
       rgb_color:
       - 200
-      - 182
+      - 146
       - 255
-      state: 'on'
-      supported_features: 63
       xy_color:
-      - 0.286
-      - 0.242
+      - 0.295
+      - 0.202
+      is_deconz_group: false
+      friendly_name: Play Light Left
+      supported_features: 63
+      icon: mdi:car-light-dimmed
+      state: 'on'
     light.play_light_right:
-      brightness: 171
+      min_mireds: 153
+      max_mireds: 500
       effect_list:
       - colorloop
-      friendly_name: Play Light Right
+      brightness: 196
       hs_color:
       - 2.169
       - 32.549
-      icon: mdi:car-light-dimmed
-      is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
       rgb_color:
       - 255
       - 175
       - 172
-      state: 'on'
-      supported_features: 63
       xy_color:
       - 0.437
       - 0.323
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      application_version: '0.05'
-      averageRequestRTT: 27
-      averageResponseRTT: 42
-      capabilities:
-      - listening
-      - beaming
-      - routing
-      friendly_name: Bureau Hélène
-      is_awake: true
-      is_failed: false
-      is_info_received: true
-      is_ready: true
-      is_zwave_plus: false
-      lastRequestRTT: 28
-      lastResponseRTT: 42
-      manufacturer_name: Leviton
-      max_baud_rate: 40000
-      neighbors:
-      - 1
-      - 5
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      receivedCnt: 225
-      receivedDups: 11
-      receivedTS: '2020-06-01 08:37:59:899 '
-      receivedUnsolicited: 15
-      retries: 1
-      sentCnt: 250
-      sentFailed: 9
-      sentTS: '2020-06-01 08:37:59:856 '
-      state: ready
+      is_deconz_group: false
+      friendly_name: Play Light Right
+      supported_features: 63
+      icon: mdi:car-light-dimmed
+      state: 'on'
 - id: '1579822529613'
   name: Partout - Sunset Présent
   entities:
@@ -151,7 +107,7 @@
       value_index: 0
       value_instance: 1
       value_id: '72057594143408129'
-      friendly_name: Bureau Hélène
+      friendly_name: Lit
       supported_features: 1
       icon: mdi:laptop
       state: 'on'
@@ -197,62 +153,95 @@
       lastResponseRTT: 42
       averageResponseRTT: 41
       application_version: '0.05'
-      friendly_name: Bureau Hélène
+      friendly_name: Lit
       state: ready
 - id: '1580212795429'
   name: Matin
   entities:
-    group.play_duo:
-      entity_id:
-      - light.play_light_left
-      - light.play_light_right
-      friendly_name: Play Lights Duo
-      icon: mdi:car-parking-lights
-      order: 2
-      state: 'on'
-    group.salon_divan_duo:
-      entity_id:
-      - light.divan_1
-      - light.divan_2
-      friendly_name: Divan Duo
-      icon: mdi:ceiling-light
-      order: 1
-      state: 'on'
-    light.abat_jour:
-      brightness: 65
-      friendly_name: Abat-jour
-      icon: mdi:lamp
-      is_deconz_group: false
-      state: 'on'
-      supported_features: 41
     light.leviton_dzmx1_1lz_dimmer_level:
-      brightness: 93
-      friendly_name: Table
       node_id: 5
-      state: 'on'
-      supported_features: 1
+      value_index: 0
+      value_instance: 1
       value_id: '72057594126630913'
-      value_index: 0
-      value_instance: 1
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level:
-      brightness: 67
-      friendly_name: Bureau Hélène
-      node_id: 6
-      state: 'on'
+      friendly_name: Table
       supported_features: 1
-      value_id: '72057594143408129'
-      value_index: 0
-      value_instance: 1
+      state: 'off'
     light.panthella:
+      min_mireds: 153
+      max_mireds: 454
       brightness: 177
       color_temp: 415
-      friendly_name: Panthella
-      icon: mdi:floor-lamp
       is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
-      state: 'on'
+      friendly_name: Panthella
       supported_features: 43
+      icon: mdi:floor-lamp
+      state: 'on'
+    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
+      node_id: 6
+      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
+      manufacturer_name: Leviton
+      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
+      query_stage: Complete
+      is_awake: true
+      is_ready: true
+      is_failed: false
+      is_info_received: true
+      max_baud_rate: 40000
+      is_zwave_plus: false
+      capabilities:
+      - beaming
+      - listening
+      - routing
+      neighbors:
+      - 1
+      - 5
+      sentCnt: 495
+      sentFailed: 0
+      retries: 0
+      receivedCnt: 328
+      receivedDups: 9
+      receivedUnsolicited: 1
+      sentTS: '2020-10-24 16:40:54:591 '
+      receivedTS: '2020-10-24 16:40:54:633 '
+      lastRequestRTT: 28
+      averageRequestRTT: 28
+      lastResponseRTT: 42
+      averageResponseRTT: 41
+      application_version: '0.05'
+      friendly_name: Lit
+      state: ready
+    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
+      brightness: 82
+      node_id: 6
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594143408129'
+      friendly_name: Lit
+      supported_features: 1
+      icon: mdi:bed
+      state: 'on'
+    light.play_light_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      is_deconz_group: false
+      friendly_name: Play Light Left
+      supported_features: 63
+      icon: mdi:car-light-dimmed
+      state: 'off'
+    light.play_light_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      brightness: 60
+      color_temp: 500
+      is_deconz_group: false
+      friendly_name: Play Light Right
+      supported_features: 63
+      icon: mdi:car-light-dimmed
+      state: 'on'
 - id: '1580437954543'
   name: Partout - Sunset - Absents
   entities:
@@ -271,7 +260,7 @@
       supported_features: 41
     light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
       brightness: 93
-      friendly_name: Bureau Hélène
+      friendly_name: Lit
       icon: mdi:laptop
       node_id: 6
       state: 'on'
@@ -297,7 +286,7 @@
       - listening
       - beaming
       - routing
-      friendly_name: Bureau Hélène
+      friendly_name: Lit
       is_awake: true
       is_failed: false
       is_info_received: true
@@ -326,119 +315,37 @@
 - id: '1580480015072'
   name: Bureau - Travail
   entities:
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
-      brightness: 106
-      friendly_name: Bureau Hélène
-      icon: mdi:laptop
-      node_id: 6
-      state: 'on'
-      supported_features: 1
-      value_id: '72057594143408129'
-      value_index: 0
-      value_instance: 1
     light.play_lights_duo:
-      brightness: 98
-      color_temp: 366
+      min_mireds: 153
+      max_mireds: 500
       effect_list:
       - colorloop
+      brightness: 178
+      color_temp: 380
+      entity_id:
+      - light.play_light_left
+      - light.play_light_right
       friendly_name: Play Lights Duo
-      icon: mdi:car-light-dimmed
-      max_mireds: 500
-      min_mireds: 153
-      state: 'on'
       supported_features: 63
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      application_version: '0.05'
-      averageRequestRTT: 27
-      averageResponseRTT: 41
-      capabilities:
-      - listening
-      - beaming
-      - routing
-      friendly_name: Bureau Hélène
-      is_awake: true
-      is_failed: false
-      is_info_received: true
-      is_ready: true
-      is_zwave_plus: false
-      lastRequestRTT: 28
-      lastResponseRTT: 41
-      manufacturer_name: Leviton
-      max_baud_rate: 40000
-      neighbors:
-      - 1
-      - 5
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      receivedCnt: 229
-      receivedDups: 11
-      receivedTS: '2020-06-01 08:38:19:072 '
-      receivedUnsolicited: 15
-      retries: 1
-      sentCnt: 258
-      sentFailed: 9
-      sentTS: '2020-06-01 08:38:19:030 '
-      state: ready
+      icon: mdi:car-light-dimmed
+      state: 'on'
 - id: '1582932871399'
   name: Bureau - Warm Night
   entities:
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
-      brightness: 77
-      friendly_name: Bureau Hélène
-      icon: mdi:laptop
-      node_id: 6
-      state: 'on'
-      supported_features: 1
-      value_id: '72057594143408129'
-      value_index: 0
-      value_instance: 1
     light.play_lights_duo:
-      brightness: 183
-      color_temp: 500
+      min_mireds: 153
+      max_mireds: 500
       effect_list:
       - colorloop
+      brightness: 159
+      color_temp: 500
+      entity_id:
+      - light.play_light_left
+      - light.play_light_right
       friendly_name: Play Lights Duo
-      icon: mdi:car-light-dimmed
-      max_mireds: 500
-      min_mireds: 153
-      state: 'on'
       supported_features: 63
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      application_version: '0.05'
-      averageRequestRTT: 27
-      averageResponseRTT: 42
-      capabilities:
-      - listening
-      - beaming
-      - routing
-      friendly_name: Bureau Hélène
-      is_awake: true
-      is_failed: false
-      is_info_received: true
-      is_ready: true
-      is_zwave_plus: false
-      lastRequestRTT: 28
-      lastResponseRTT: 43
-      manufacturer_name: Leviton
-      max_baud_rate: 40000
-      neighbors:
-      - 1
-      - 5
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      receivedCnt: 235
-      receivedDups: 11
-      receivedTS: '2020-06-01 08:38:49:732 '
-      receivedUnsolicited: 15
-      retries: 1
-      sentCnt: 270
-      sentFailed: 9
-      sentTS: '2020-06-01 08:38:49:688 '
-      state: ready
+      icon: mdi:car-light-dimmed
+      state: 'on'
 - id: '1586443643979'
   name: Louis - Standard
   entities:
@@ -492,89 +399,45 @@
 - id: '1589980141840'
   name: Bureau - Ultra Geek
   entities:
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
-      brightness: 49
-      friendly_name: Bureau Hélène
-      icon: mdi:laptop
-      node_id: 6
-      state: 'on'
-      supported_features: 1
-      value_id: '72057594143408129'
-      value_index: 0
-      value_instance: 1
     light.play_light_left:
-      brightness: 226
+      min_mireds: 153
+      max_mireds: 500
       effect_list:
       - colorloop
+      brightness: 242
+      hs_color:
+      - 26.906
+      - 87.451
+      rgb_color:
+      - 255
+      - 132
+      - 31
+      xy_color:
+      - 0.6
+      - 0.375
+      is_deconz_group: false
       friendly_name: Play Light Left
-      hs_color:
-      - 26.814
-      - 88.627
-      icon: mdi:car-light-dimmed
-      is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
-      rgb_color:
-      - 255
-      - 130
-      - 29
-      state: 'on'
       supported_features: 63
-      xy_color:
-      - 0.603
-      - 0.373
+      icon: mdi:car-light-dimmed
+      state: 'on'
     light.play_light_right:
-      brightness: 231
+      min_mireds: 153
+      max_mireds: 500
       effect_list:
       - colorloop
-      friendly_name: Play Light Right
+      brightness: 206
       hs_color:
-      - 255.984
-      - 95.686
-      icon: mdi:car-light-dimmed
-      is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
+      - 224.64
+      - 98.039
       rgb_color:
-      - 76
-      - 11
-      - 255
-      state: 'on'
-      supported_features: 63
-      xy_color:
-      - 0.166
-      - 0.056
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      application_version: '0.05'
-      averageRequestRTT: 27
-      averageResponseRTT: 41
-      capabilities:
-      - listening
-      - beaming
-      - routing
-      friendly_name: Bureau Hélène
-      is_awake: true
-      is_failed: false
-      is_info_received: true
-      is_ready: true
-      is_zwave_plus: false
-      lastRequestRTT: 28
-      lastResponseRTT: 42
-      manufacturer_name: Leviton
-      max_baud_rate: 40000
-      neighbors:
-      - 1
       - 5
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      receivedCnt: 234
-      receivedDups: 11
-      receivedTS: '2020-06-01 08:38:46:504 '
-      receivedUnsolicited: 15
-      retries: 1
-      sentCnt: 268
-      sentFailed: 9
-      sentTS: '2020-06-01 08:38:46:461 '
-      state: ready
+      - 69
+      - 255
+      xy_color:
+      - 0.138
+      - 0.07
+      is_deconz_group: false
+      friendly_name: Play Light Right
+      supported_features: 63
+      icon: mdi:car-light-dimmed
+      state: 'on'

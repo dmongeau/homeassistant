@@ -13,7 +13,8 @@ views:
         type: entities
         show_header_toggle: false
         entities:
-          - entity: light.abat_jour
+          - entity: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
+          # - entity: light.abat_jour
       - title: Chambre Louis
         type: entities
         show_header_toggle: false
@@ -96,16 +97,16 @@ views:
                 service_data:
                   entity_id: scene.louis_matin
                 icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
-      - entities:
+      - title: Séjour
+        entities:
           - entity: light.divan_duo
           - entity: light.panthella
           - entity: light.leviton_dzmx1_1lz_dimmer_level
           - entity: light.etagere
-        title: Séjour
         type: entities
         show_header_toggle: false
-      - entities:
-          - entity: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
+      - title: Bureau
+        entities:
           - type: "custom:fold-entity-row"
             head: light.play_lights_duo
             entities:
@@ -136,7 +137,6 @@ views:
                 service_data:
                   entity_id: scene.bureau_warm_night
                 icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
-        title: Bureau
         type: entities
       - entities:
           - entity: switch.escalier_sous_sol
