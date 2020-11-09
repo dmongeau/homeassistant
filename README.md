@@ -8,6 +8,12 @@ $ cd ~/homeassistant
 $ docker-compose start -d
 ```
 
+## Logs
+```
+$ cd ~/homeassistant
+$ docker-compose logs -t
+```
+
 ## Update HomeAssistant (and other containers)
 
 - Pull the latest docker images:
