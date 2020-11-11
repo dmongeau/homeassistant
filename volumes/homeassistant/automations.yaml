@@ -11,10 +11,10 @@
   alias: TV Time when TV is turned on
   description: ''
   trigger:
-  - entity_id: media_player.sony_bravia_tv
-    from: 'off'
+  - from: 'off'
     platform: state
     to: 'on'
+    entity_id: media_player.sony_bravia_tv
   condition:
   - after: sunset
     before: sunrise
@@ -22,6 +22,7 @@
   action:
   - entity_id: scene.tv_time
     service: scene.turn_on
+  mode: single
 - id: '1580255118149'
   alias: Turn on Balcon when Hélène or François gets Home
   description: ''

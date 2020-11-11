@@ -5,7 +5,7 @@
 - Start docker-compose
 ```
 $ cd ~/homeassistant
-$ docker-compose start -d
+$ docker-compose up -d
 ```
 
 ## Logs

@@ -16,10 +16,6 @@ zwave:
   device_config: !include zwave_device_config.yaml
   network_key: "0x84, 0xC2, 0xC5, 0xC2, 0x3F, 0x25, 0x69, 0x97, 0xD1, 0xD8, 0xD6, 0x69, 0x70, 0x57, 0x60, 0xA2"
 
-# Wink
-# -----------------------
-wink:
-
 # Wemo
 # -----------------------
 wemo:
@@ -27,11 +23,11 @@ wemo:
   static:
     - 192.168.86.57
 
-# TV
+# Datadog
 # -----------------------
-media_player:
-  - platform: braviatv
-    host: 192.168.86.44
+datadog:
+  host: 172.17.0.1 # this is the ip of Docker's Host (the pi), where our Datadog Agent is running
+  prefix: ha
 
 # Device Trackers
 # -----------------------
@@ -46,9 +42,7 @@ device_tracker:
 # -----------------------
 google_assistant:
   project_id: homeassistant-93748
-  service_account:
-    private_key: !secret google_actions_private_key
-    client_email: !secret google_actions_client_email
+  service_account: !include google_service_account.json
   report_state: true
   exposed_domains:
     - scene
@@ -73,6 +67,13 @@ google_assistant:
 tts:
   - platform: google_translate
 
+# LOGGER
+# -----------------------
+logger: 
+  default: info
+  logs:
+    homeassistant.components.datadog: debug
+    
 # FRONT-END
 # -----------------------
 frontend:
