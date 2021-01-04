@@ -50,10 +50,8 @@ services:
       - EMAIL=francois@francoiscote.net
       - URL=ha.francoiscote.net
       - VALIDATION=dns
-      - DNSPLUGIN=route53
+      - DNSPLUGIN=digitalocean
       - TZ=America/New_York
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     ports:
       - "443:443"
       - "80:80"

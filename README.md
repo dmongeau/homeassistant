@@ -18,7 +18,8 @@ $ docker-compose logs -t
 
 - Pull the latest docker images:
 ```
-$ docker-compose up --force-recreate --build -d
+$ docker-compose pull
+$ docker-compose up -d --build
 ```
 
 - Cleanup
