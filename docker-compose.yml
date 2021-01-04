@@ -21,7 +21,7 @@ services:
     volumes:
       - ./volumes/deconz:/root/.local/share/dresden-elektronik/deCONZ
     devices:
-      - /dev/conbee
+      - /dev/conbee:/dev/ttyACM0
     environment:
       - DECONZ_WEB_PORT=801
       - DECONZ_WS_PORT=445
@@ -30,7 +30,6 @@ services:
       - DECONZ_VNC_PASSWORD=supersecret
       - DEBUG_INFO=1
       - DECONZ_UPNP=0
-      - DECONZ_DEVICE=/dev/conbee
       - TZ=America/New_York
     ports:
       - "801:801"
