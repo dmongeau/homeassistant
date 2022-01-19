@@ -26,4 +26,4 @@ bravia.conf
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
-google_service_account.json
+google_service_accounts.json
