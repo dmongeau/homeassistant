@@ -1,7 +1,7 @@
 - name: Chambre Louis Lampes
   platform: group
   entities:
-    - light.lecture_chambre_louis
+    - light.lecture
     - light.table_a_langer
 - name: Divan Duo
   platform: group
@@ -13,3 +13,7 @@
   entities:
     - light.play_light_left
     - light.play_light_right
+- name: "Escalier"
+  platform: mqtt
+  state_topic: "Relay/relays/0/state"
+  command_topic: "Relay/relays/0"

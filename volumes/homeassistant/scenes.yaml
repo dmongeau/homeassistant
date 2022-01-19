@@ -2,23 +2,27 @@
   name: TV Time
   entities:
     light.divan_duo:
-      brightness: 32
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 16
       color_temp: 446
+      entity_id:
+      - light.divan_1
+      - light.divan_2
       friendly_name: Divan Duo
-      max_mireds: 500
-      min_mireds: 153
-      state: 'on'
       supported_features: 43
+      icon: mdi:sofa
+      state: 'on'
     light.panthella:
-      brightness: 69
-      color_temp: 454
-      friendly_name: Panthella
-      icon: mdi:floor-lamp
-      is_deconz_group: false
-      max_mireds: 500
       min_mireds: 153
-      state: 'on'
+      max_mireds: 454
+      brightness: 75
+      color_temp: 454
+      is_deconz_group: false
+      friendly_name: Panthella
       supported_features: 43
+      icon: mdi:floor-lamp
+      state: 'on'
 - id: '1579813629177'
   name: Bureau - Geek Night
   entities:
@@ -67,32 +71,44 @@
 - id: '1579822529613'
   name: Partout - Sunset Présent
   entities:
-    light.abat_jour:
-      brightness: 143
-      is_deconz_group: false
-      friendly_name: Abat-jour
-      supported_features: 41
-      icon: mdi:lamp
-      state: 'on'
     light.divan_duo:
       min_mireds: 153
       max_mireds: 454
-      brightness: 71
-      color_temp: 446
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 122
+      color_temp: 420
+      hs_color:
+      - 29.21
+      - 77.052
+      rgb_color:
+      - 255
+      - 154
+      - 58
+      xy_color:
+      - 0.56
+      - 0.39
       entity_id:
       - light.divan_1
       - light.divan_2
       friendly_name: Divan Duo
-      supported_features: 43
       icon: mdi:sofa
+      supported_features: 40
       state: 'on'
     light.etagere:
-      brightness: 1
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 47
       is_deconz_group: false
-      friendly_name: Étagère
-      supported_features: 41
+      friendly_name: Étagere
+      supported_features: 40
       state: 'on'
-    light.leviton_dzmx1_1lz_dimmer_level:
+    light.table:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
       brightness: 93
       node_id: 5
       value_index: 0
@@ -101,7 +117,10 @@
       friendly_name: Table
       supported_features: 1
       state: 'on'
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
+    light.lit:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
       brightness: 82
       node_id: 6
       value_index: 0
@@ -109,56 +128,37 @@
       value_id: '72057594143408129'
       friendly_name: Lit
       supported_features: 1
-      icon: mdi:laptop
+      icon: mdi:bed
       state: 'on'
     light.panthella:
       min_mireds: 153
       max_mireds: 454
-      brightness: 177
-      color_temp: 415
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 201
+      color_temp: 403
+      hs_color:
+      - 28.925
+      - 73.215
+      rgb_color:
+      - 255
+      - 158
+      - 68
+      xy_color:
+      - 0.549
+      - 0.389
       is_deconz_group: false
       friendly_name: Panthella
-      supported_features: 43
+      supported_features: 40
       icon: mdi:floor-lamp
       state: 'on'
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      manufacturer_name: Leviton
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: false
-      capabilities:
-      - beaming
-      - listening
-      - routing
-      neighbors:
-      - 1
-      - 5
-      sentCnt: 85
-      sentFailed: 0
-      retries: 0
-      receivedCnt: 60
-      receivedDups: 2
-      receivedUnsolicited: 0
-      sentTS: '2020-10-03 18:25:47:853 '
-      receivedTS: '2020-10-03 18:25:47:895 '
-      lastRequestRTT: 28
-      averageRequestRTT: 28
-      lastResponseRTT: 42
-      averageResponseRTT: 41
-      application_version: '0.05'
-      friendly_name: Lit
-      state: ready
 - id: '1580212795429'
   name: Matin
   entities:
-    light.leviton_dzmx1_1lz_dimmer_level:
+    light.table:
+      supported_color_modes:
+      - brightness
       node_id: 5
       value_index: 0
       value_instance: 1
@@ -169,48 +169,30 @@
     light.panthella:
       min_mireds: 153
       max_mireds: 454
-      brightness: 177
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 197
       color_temp: 415
+      hs_color:
+      - 29.125
+      - 75.922
+      rgb_color:
+      - 255
+      - 155
+      - 61
+      xy_color:
+      - 0.557
+      - 0.389
       is_deconz_group: false
       friendly_name: Panthella
-      supported_features: 43
+      supported_features: 40
       icon: mdi:floor-lamp
       state: 'on'
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      manufacturer_name: Leviton
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: false
-      capabilities:
-      - beaming
-      - listening
-      - routing
-      neighbors:
-      - 1
-      - 5
-      sentCnt: 495
-      sentFailed: 0
-      retries: 0
-      receivedCnt: 328
-      receivedDups: 9
-      receivedUnsolicited: 1
-      sentTS: '2020-10-24 16:40:54:591 '
-      receivedTS: '2020-10-24 16:40:54:633 '
-      lastRequestRTT: 28
-      averageRequestRTT: 28
-      lastResponseRTT: 42
-      averageResponseRTT: 41
-      application_version: '0.05'
-      friendly_name: Lit
-      state: ready
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
+    light.lit:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
       brightness: 82
       node_id: 6
       value_index: 0
@@ -225,22 +207,107 @@
       max_mireds: 500
       effect_list:
       - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 115
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
       is_deconz_group: false
-      friendly_name: Play Light Left
-      supported_features: 63
+      friendly_name: Play Light 1
+      supported_features: 44
       icon: mdi:car-light-dimmed
-      state: 'off'
+      state: 'on'
     light.play_light_right:
       min_mireds: 153
       max_mireds: 500
       effect_list:
       - colorloop
-      brightness: 60
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 124
       color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
       is_deconz_group: false
-      friendly_name: Play Light Right
-      supported_features: 63
+      friendly_name: Play Light 2
+      supported_features: 44
       icon: mdi:car-light-dimmed
+      state: 'on'
+    light.divan_1:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 71
+      color_temp: 446
+      hs_color:
+      - 29.65
+      - 82.775
+      rgb_color:
+      - 255
+      - 148
+      - 43
+      xy_color:
+      - 0.575
+      - 0.389
+      is_deconz_group: false
+      friendly_name: Divan 1
+      supported_features: 40
+      state: 'on'
+    light.divan_2:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 71
+      color_temp: 446
+      hs_color:
+      - 29.65
+      - 82.775
+      rgb_color:
+      - 255
+      - 148
+      - 43
+      xy_color:
+      - 0.575
+      - 0.389
+      is_deconz_group: false
+      friendly_name: Divan 2
+      supported_features: 40
+      state: 'on'
+    light.etagere:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 3
+      is_deconz_group: false
+      friendly_name: Étagere
+      supported_features: 40
       state: 'on'
 - id: '1580437954543'
   name: Partout - Sunset - Absents
@@ -258,7 +325,7 @@
       is_deconz_group: false
       state: 'on'
       supported_features: 41
-    light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3:
+    light.lit:
       brightness: 93
       friendly_name: Lit
       icon: mdi:laptop
@@ -278,40 +345,6 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
-    zwave.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_3:
-      application_version: '0.05'
-      averageRequestRTT: 27
-      averageResponseRTT: 42
-      capabilities:
-      - listening
-      - beaming
-      - routing
-      friendly_name: Lit
-      is_awake: true
-      is_failed: false
-      is_info_received: true
-      is_ready: true
-      is_zwave_plus: false
-      lastRequestRTT: 28
-      lastResponseRTT: 42
-      manufacturer_name: Leviton
-      max_baud_rate: 40000
-      neighbors:
-      - 1
-      - 5
-      node_id: 6
-      node_name: Leviton DZPD3-1LW Plug-In Dimming Lamp Module
-      product_name: DZPD3-1LW Plug-In Dimming Lamp Module
-      query_stage: Complete
-      receivedCnt: 236
-      receivedDups: 11
-      receivedTS: '2020-06-01 08:39:24:191 '
-      receivedUnsolicited: 15
-      retries: 1
-      sentCnt: 272
-      sentFailed: 9
-      sentTS: '2020-06-01 08:39:24:149 '
-      state: ready
 - id: '1580480015072'
   name: Bureau - Travail
   entities:
@@ -320,14 +353,14 @@
       max_mireds: 500
       effect_list:
       - colorloop
-      brightness: 178
-      color_temp: 380
+      brightness: 254
+      color_temp: 345
       entity_id:
       - light.play_light_left
       - light.play_light_right
       friendly_name: Play Lights Duo
-      supported_features: 63
       icon: mdi:car-light-dimmed
+      supported_features: 63
       state: 'on'
 - id: '1582932871399'
   name: Bureau - Warm Night
@@ -349,7 +382,7 @@
 - id: '1586443643979'
   name: Louis - Standard
   entities:
-    light.lecture_chambre_louis:
+    light.lecture:
       brightness: 176
       color_temp: 405
       friendly_name: Lecture
@@ -372,30 +405,58 @@
       state: 'on'
       supported_features: 63
 - id: '1586443749250'
-  name: Louis - Matin
+  name: Louis - Dodo
   entities:
-    light.lecture_chambre_louis:
+    light.lecture:
+      min_mireds: 153
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
       brightness: 115
       color_temp: 454
-      friendly_name: Lecture
-      icon: mdi:floor-lamp
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
       is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
+      friendly_name: Lecture
+      supported_features: 40
+      icon: mdi:floor-lamp
       state: 'on'
-      supported_features: 43
     light.table_a_langer:
-      brightness: 88
-      color_temp: 500
+      min_mireds: 140
+      max_mireds: 650
       effect_list:
       - colorloop
-      friendly_name: Table à Langer
-      icon: mdi:lamp
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 88
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
       is_deconz_group: false
-      max_mireds: 500
-      min_mireds: 153
+      friendly_name: Table à Langer
+      supported_features: 44
+      icon: mdi:lamp
       state: 'on'
-      supported_features: 63
 - id: '1589980141840'
   name: Bureau - Ultra Geek
   entities:

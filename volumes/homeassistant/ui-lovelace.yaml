@@ -7,14 +7,16 @@ resources:
   - url: hacsfiles/rgb-light-card/card.js
     type: js
 views:
-  - badges: []
+  - title: Lights
+    path: lights
+    icon: "mdi:lightbulb-on"
+    badges: []
     cards:
       - title: Chambre à coucher
         type: entities
         show_header_toggle: false
         entities:
-          - entity: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
-          # - entity: light.abat_jour
+          - entity: light.lit
       - title: Chambre Louis
         type: entities
         show_header_toggle: false
@@ -82,7 +84,7 @@ views:
                   - 255
                 brightness: 140
                 icon_color: "pink"
-          - entity: light.lecture_chambre_louis
+          - entity: light.lecture
           - entity: light.plafond_chambre_louis
           - type: "custom:rgb-light-card"
             justify: center
@@ -95,13 +97,13 @@ views:
               - type: call-service
                 service: scene.turn_on
                 service_data:
-                  entity_id: scene.louis_matin
+                  entity_id: scene.louis_dodo
                 icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
       - title: Séjour
         entities:
           - entity: light.divan_duo
           - entity: light.panthella
-          - entity: light.leviton_dzmx1_1lz_dimmer_level
+          - entity: light.table
           - entity: light.etagere
         type: entities
         show_header_toggle: false
@@ -138,23 +140,20 @@ views:
                   entity_id: scene.bureau_warm_night
                 icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
         type: entities
-      - entities:
-          - entity: switch.escalier_sous_sol
-          - entity: switch.neons_salle_de_lavage
-          - entity: light.sous_sol_salle_de_jeu
-        title: Sous-Sol
+      - title: Sous-Sol
         type: entities
-      - entities:
-          - entity: light.balcon_arriere
-        title: Extérieur
+        entities:
+          - entity: light.escalier
+          - entity: light.salle_de_jeu
+          - entity: switch.neons_salle_de_lavage
+      - title: Extérieur
         type: entities
         show_header_toggle: false
-    icon: "mdi:lightbulb-on"
-    path: lights
-    title: Lights
-  - badges: []
-    cards:
-      - cards:
+        entities:
+          - entity: light.balcon_arriere
+      - title: Scènes
+        type: horizontal-stack
+        cards:
           - entity: script.1586208826829
             hold_action:
               action: more-info
@@ -196,40 +195,52 @@ views:
               service_data:
                 entity_id: scene.partout_sunset_present
             type: entity-button
-        title: Scènes
-        type: horizontal-stack
-      - type: horizontal-stack
-        cards:
-          - type: "custom:mini-graph-card"
-            entities:
-              - entity: sensor.wink_relay_sensor_temperature
-                name: Temperature
-                index: 0
-            name: Temperature
-            animate: true
-          - type: "custom:mini-graph-card"
-            entities:
-              - entity: sensor.wink_relay_sensor_humidity
-                name: Humidity
-                index: 0
-            line_color: mediumaquamarine
-            name: Humidity
-            icon: "mdi:water-outline"
-            animate: true
-      - entity: weather.620_ball
-        type: weather-forecast
-    icon: "mdi:home"
+  - title: Temperature
+    path: home
     panel: false
-    path: default_view
-    title: Home
-  - path: piserver
-    icon: "mdi:server-network"
-    title: PiServer
+    icon: mdi:thermometer
     cards:
-      - entities:
-          - entity: binary_sensor.updater
-            name: HA Update
-          - entity: sensor.hacs
-            name: HACS
-        show_name: true
+      - type: weather-forecast
+        entity: weather.thermostat
+      - type: thermostat
+        entity: climate.thermostat
+      - type: custom:mini-graph-card
+        name: Ecobee Sensors
+        points_per_hour: 2
+        show: 
+          points: false
+        entities:
+          - entity: sensor.thermostat_temperature
+            name: Thermostat
+          - entity: sensor.emilie_temperature
+            name: Émilie
+          - entity: sensor.living_room_temperature
+            name: Salon
+          - entity: sensor.multi_sensor
+            name: Chambre Louis
+      - type: custom:mini-graph-card
+        entities: 
+          - sensor.aquara_biere
+  - title: PiServer
+    path: piserver
+    icon: "mdi:server-network"
+    cards:
+      - title: Updates
         type: glance
+        show_name: true
+        entities:
+          - name: HA Update
+            entity: binary_sensor.updater
+          - name: HACS
+            entity: sensor.hacs
+            
+      - title: Batteries
+        type: glance
+        show_name: true
+        entities:
+          - name: Aquara Chambre Louis
+            entity: sensor.multi_sensor_battery_level
+          - name: Aquara Bière
+            entity: sensor.aquara_biere_battery_level
+          - name: Remote Tradfri Chambre 
+            entity: sensor.tradfri_remote_control_battery_level

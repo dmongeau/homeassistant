@@ -13,15 +13,17 @@
   trigger:
   - from: 'off'
     platform: state
-    to: 'on'
     entity_id: media_player.sony_bravia_tv
+    to: playing
   condition:
-  - after: sunset
-    before: sunrise
-    condition: sun
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  - condition: time
+    after: '19:00:00'
+    before: 03:00:00
   action:
-  - entity_id: scene.tv_time
-    service: scene.turn_on
+  - scene: scene.tv_time
   mode: single
 - id: '1580255118149'
   alias: Turn on Balcon when Hélène or François gets Home
@@ -46,7 +48,7 @@
   alias: Sync Sous-sol
   description: Sync Sous-sol lights with the Escalier
   trigger:
-  - entity_id: switch.escalier_sous_sol
+  - entity_id: light.escalier
     platform: state
   condition: []
   action:
@@ -54,7 +56,7 @@
     entity_id: switch.neons_salle_de_lavage
     service_template: switch.turn_{{trigger.to_state.state}}
   - data: {}
-    entity_id: light.sous_sol_salle_de_jeu
+    entity_id: light.salle_de_jeu
     service_template: light.turn_{{trigger.to_state.state}}
 - id: '1580437112393'
   alias: Sunset - Présents
@@ -146,7 +148,7 @@
   action:
   - type: brightness_increase
     device_id: 7b79b797e33a4f178e929819349e2a4c
-    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
+    entity_id: light.lit
     domain: light
   mode: single
 - id: '1583935442019'
@@ -162,7 +164,7 @@
   action:
   - type: brightness_decrease
     device_id: 7b79b797e33a4f178e929819349e2a4c
-    entity_id: light.leviton_dzpd3_1lw_plug_in_dimming_lamp_module_level_3
+    entity_id: light.lit
     domain: light
   mode: single
 - id: '1586196993886'
@@ -196,7 +198,7 @@
     type: brightness_increase
   - device_id: a26d66cb36bf49eb8441fc79f5a63f9e
     domain: light
-    entity_id: light.lecture_chambre_louis
+    entity_id: light.lecture
     type: brightness_increase
 - id: '1586201744355'
   alias: Aurora Louis DOWN
@@ -215,5 +217,37 @@
     type: brightness_decrease
   - device_id: a26d66cb36bf49eb8441fc79f5a63f9e
     domain: light
-    entity_id: light.lecture_chambre_louis
+    entity_id: light.lecture
     type: brightness_decrease
+- id: '1607394110249'
+  alias: Bureau Travail 8h30 AM Weekdays
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition: []
+  action:
+  - scene: scene.bureau_travail
+  mode: single
+- id: '1628363225543'
+  alias: 11pm Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - data: {}
+    entity_id: script.1586208826829
+    service: script.turn_on
+  mode: single
+- id: '1633539910188'
+  alias: Relay Switch Bottom - Louis Dodo
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.relay_switch
+  condition: []
+  action:
+  - scene: scene.louis_dodo
+  mode: single
