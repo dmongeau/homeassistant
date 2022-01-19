@@ -1,1 +1,8 @@
 #
+store/
+homeassistant/blueprints/
+
+volumes/deconz/
+volumes/mosquitto/
+volumes/swag/
+volumes/zwavejs/
