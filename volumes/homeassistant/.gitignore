@@ -11,8 +11,12 @@
 *.sqlite
 *.xml
 
+# Blueprints
+blueprints/
+
 # Logs
 *.log
+*.log.*
 OZW_Log.txt
 
 # Custom Components

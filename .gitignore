@@ -5,6 +5,3 @@ volumes/deconz/
 volumes/mosquitto/
 volumes/swag/
 volumes/zwavejs/
-
-volumes/homeassistant/blueprints/
-volumes/homeassistant/*.log.*
