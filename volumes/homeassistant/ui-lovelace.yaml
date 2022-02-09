@@ -141,6 +141,11 @@ views:
                 service_data:
                   entity_id: scene.bureau_warm_night
                 icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
+              - type: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.bureau_stream
+                icon_color: "linear-gradient(135deg, #b3d5ff, #ffd582)"
       - title: Extérieur
         type: entities
         show_header_toggle: false

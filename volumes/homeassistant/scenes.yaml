@@ -502,3 +502,57 @@
       supported_features: 63
       icon: mdi:car-light-dimmed
       state: 'on'
+- id: '1644431415885'
+  name: Bureau - Stream
+  entities:
+    light.play_light_left:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: xy
+      brightness: 84
+      hs_color:
+      - 210.556
+      - 42.353
+      rgb_color:
+      - 147
+      - 200
+      - 255
+      xy_color:
+      - 0.2224
+      - 0.2593
+      is_deconz_group: false
+      friendly_name: Play Light 1
+      supported_features: 44
+      state: 'on'
+    light.play_light_right:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 120
+      color_temp: 443
+      hs_color:
+      - 29.599
+      - 82.123
+      rgb_color:
+      - 255
+      - 148
+      - 45
+      xy_color:
+      - 0.574
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Play Light 2
+      supported_features: 44
+      state: 'on'
