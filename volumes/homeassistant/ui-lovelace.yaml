@@ -1,11 +1,4 @@
 title: 620 Ball
-resources:
-  - url: hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-    type: module
-  - url: hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
-    type: module
-  - url: hacsfiles/rgb-light-card/card.js
-    type: js
 views:
   - title: Lights
     path: lights
@@ -109,6 +102,15 @@ views:
         show_header_toggle: false
       - title: Bureau
         entities:
+          - entity: light.globe
+
+        type: entities
+      - title: Sous-Sol
+        type: entities
+        entities:
+          - entity: light.escalier
+          - entity: light.salle_de_jeu
+          - entity: switch.neons_salle_de_lavage
           - type: "custom:fold-entity-row"
             head: light.play_lights_duo
             entities:
@@ -139,13 +141,6 @@ views:
                 service_data:
                   entity_id: scene.bureau_warm_night
                 icon_color: "linear-gradient(135deg, #fee140, #fa709a)"
-        type: entities
-      - title: Sous-Sol
-        type: entities
-        entities:
-          - entity: light.escalier
-          - entity: light.salle_de_jeu
-          - entity: switch.neons_salle_de_lavage
       - title: Extérieur
         type: entities
         show_header_toggle: false

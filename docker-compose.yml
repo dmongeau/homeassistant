@@ -48,10 +48,10 @@ services:
       - "9001:9001"
 
   deconz:
-    image: marthoc/deconz
+    image: deconzcommunity/deconz:stable
     restart: unless-stopped
     volumes:
-      - ./volumes/deconz:/root/.local/share/dresden-elektronik/deCONZ
+      - ./volumes/deconz:/opt/deCONZ
     devices:
       - /dev/conbee:/dev/ttyACM0
     environment:

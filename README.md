@@ -16,7 +16,6 @@ $ docker-compose logs -t
 
 ## Update HomeAssistant (and other containers)
 
-- update the image version's for the `homeassistant` container in docker-compose.yml
 - Pull the latest docker images:
 ```
 $ docker-compose pull
