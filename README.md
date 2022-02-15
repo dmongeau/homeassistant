@@ -16,9 +16,10 @@ $ docker-compose logs -t
 
 ## Update HomeAssistant (and other containers)
 
-- Pull the latest docker images:
+- Pull the latest docker images, stop and restart:
 ```
 $ docker-compose pull
+$ docker-compose stop
 $ docker-compose up -d --build
 ```
 
