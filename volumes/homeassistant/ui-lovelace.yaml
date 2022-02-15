@@ -102,15 +102,6 @@ views:
         show_header_toggle: false
       - title: Bureau
         entities:
-          - entity: light.globe
-
-        type: entities
-      - title: Sous-Sol
-        type: entities
-        entities:
-          - entity: light.escalier
-          - entity: light.salle_de_jeu
-          - entity: switch.neons_salle_de_lavage
           - type: "custom:fold-entity-row"
             head: light.play_lights_duo
             entities:
@@ -146,6 +137,14 @@ views:
                 service_data:
                   entity_id: scene.bureau_stream
                 icon_color: "linear-gradient(135deg, #b3d5ff, #ffd582)"
+
+        type: entities
+      - title: Sous-Sol
+        type: entities
+        entities:
+          - entity: light.escalier
+          - entity: light.salle_de_jeu
+          - entity: switch.neons_salle_de_lavage
       - title: Extérieur
         type: entities
         show_header_toggle: false

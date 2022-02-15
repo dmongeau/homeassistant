@@ -514,18 +514,19 @@
       - color_temp
       - hs
       - xy
-      color_mode: xy
-      brightness: 84
+      color_mode: color_temp
+      brightness: 89
+      color_temp: 456
       hs_color:
-      - 210.556
-      - 42.353
+      - 29.826
+      - 85.007
       rgb_color:
-      - 147
-      - 200
       - 255
+      - 145
+      - 38
       xy_color:
-      - 0.2224
-      - 0.2593
+      - 0.581
+      - 0.387
       is_deconz_group: false
       friendly_name: Play Light 1
       supported_features: 44
@@ -541,18 +542,26 @@
       - xy
       color_mode: color_temp
       brightness: 120
-      color_temp: 443
+      color_temp: 453
       hs_color:
-      - 29.599
-      - 82.123
+      - 29.772
+      - 84.328
       rgb_color:
       - 255
-      - 148
-      - 45
+      - 146
+      - 39
       xy_color:
-      - 0.574
+      - 0.579
       - 0.388
       is_deconz_group: false
       friendly_name: Play Light 2
       supported_features: 44
       state: 'on'
+    light.salle_de_jeu:
+      supported_color_modes:
+      - brightness
+      is_deconz_group: false
+      icon: mdi:seesaw
+      friendly_name: Salle de jeu
+      supported_features: 40
+      state: 'off'
