@@ -1,0 +1,27 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+    external_url: https://ha.panet-chalet.duckdns.org
+    customize: !include customize.yaml
+
+# HTTP Proxy
+http:
+    use_x_forwarded_for: true
+    trusted_proxies:
+        - 172.23.0.0/16
+
+# MQTT
+mqtt:
+    broker: mqtt
+
+# Text to speech
+tts:
+    - platform: google_translate
+
+camera: !include cameras.yaml
+homekit: !include homekit.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

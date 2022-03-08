@@ -1,0 +1,12 @@
+- platform: mjpeg
+  mjpeg_url: http://192.168.3.100:8081
+  name: camera1
+  username: panet
+  password: !secret camera1_password
+  verify_ssl: false
+- platform: mjpeg
+  mjpeg_url: http://192.168.3.101:8081
+  name: camera2
+  username: panet
+  password: !secret camera2_password
+  verify_ssl: false

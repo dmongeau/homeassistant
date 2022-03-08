@@ -1,0 +1,21 @@
+- name: "Home Assistant"
+  filter:
+      include_entities:
+          - climate.thermostat_salle_de_bain
+          - sensor.thermostat_temperature_salle_de_bain
+          - climate.thermostat_salle_de_bain_2
+          - sensor.thermostat_temperature_salle_de_bain_2
+          - climate.thermostat_vestibule_2
+          - sensor.thermostat_temperature_vestibule_2
+- name: "Camera 1"
+  mode: accessory
+  port: 21064
+  filter:
+      include_entities:
+          - camera.camera1
+- name: "Camera 2"
+  mode: accessory
+  port: 21065
+  filter:
+      include_entities:
+          - camera.camera2

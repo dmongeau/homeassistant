@@ -1,0 +1,20 @@
+sensor.et_wv525_kib_s_received:
+  friendly_name: "Données reçues par le routeur"
+sensor.et_wv525_kib_s_sent:
+  friendly_name: "Données envoyées par le routeur"
+camera.camera1:
+  friendly_name: "Caméra 1"
+camera.camera2:
+  friendly_name: "Caméra 2"
+climate.thermostat_salle_de_bain:
+  friendly_name: "Thermostat"
+sensor.thermostat_temperature_salle_de_bain:
+  friendly_name: "Température"
+climate.thermostat_salle_de_bain_2:
+  friendly_name: "Thermostat"
+sensor.thermostat_temperature_salle_de_bain_2:
+  friendly_name: "Température"
+climate.thermostat_vestibule_2:
+  friendly_name: "Thermostat"
+sensor.thermostat_temperature_vestibule_2:
+  friendly_name: "Température"
