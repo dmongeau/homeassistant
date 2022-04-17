@@ -35,19 +35,6 @@ services:
             - "8091:8091" # port for web interface
             - "3000:3000" # port for Z-Wave JS websocket server
 
-    mqtt:
-        image: eclipse-mosquitto
-        restart: unless-stopped
-        environment:
-            - TZ=America/New_York
-        volumes:
-            - ./config/mosquitto/config:/mosquitto/config
-            - ./config/mosquitto/data:/mosquitto/data
-            - ./config/mosquitto/log:/mosquitto/log
-        ports:
-            - "1883:1883"
-            - "9001:9001"
-
     deconz:
         image: deconzcommunity/deconz:stable
         restart: unless-stopped
