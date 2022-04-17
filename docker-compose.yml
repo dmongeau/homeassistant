@@ -10,7 +10,6 @@ services:
         environment:
             - TZ=America/New_York
         networks:
-            - default
             - host
         depends_on:
             - swag
