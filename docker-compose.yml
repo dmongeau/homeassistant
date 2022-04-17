@@ -6,7 +6,7 @@ services:
         volumes:
             - ./config/homeassistant:/config
         devices:
-            - /dev/conbee
+            - ${ZIGBEE_DEVICE}:/dev/ttyACM0
         environment:
             - TZ=America/New_York
         depends_on:
