@@ -6,6 +6,8 @@
           - sensor.thermostat_salon_temperature
           - climate.thermostat_salle_de_bain
           - sensor.thermostat_salle_de_bain_temperature
+          - climate.thermostat_chambre
+          - sensor.thermostat_chambre_temperature
           - climate.thermostat_salle_de_bain_2
           - sensor.thermostat_salle_de_bain_2_temperature
           - climate.thermostat_vestibule_2

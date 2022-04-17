@@ -22,6 +22,11 @@ climate.thermostat_salle_de_bain:
 sensor.thermostat_salle_de_bain_temperature:
   friendly_name: "Température"
 
+climate.thermostat_chambre:
+  friendly_name: "Thermostat"
+sensor.thermostat_chambre_temperature:
+  friendly_name: "Température"
+
 climate.thermostat_salle_de_bain_2:
   friendly_name: "Thermostat"
 sensor.thermostat_salle_de_bain_2_temperature:
