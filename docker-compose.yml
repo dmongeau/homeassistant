@@ -60,8 +60,8 @@ services:
         restart: unless-stopped
         environment:
             - TZ=America/New_York
-        volumes:
-            - ./config/mqtt/config:/mosquitto/config
+        # volumes:
+        #     - ./config/mqtt/config:/mosquitto/config
         ports:
             - "1883:1883"
             - "9001:9001"
