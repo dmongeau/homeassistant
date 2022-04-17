@@ -26,7 +26,6 @@ services:
             - SESSION_SECRET=${ZWAVEJS_SECRET}
             - TZ=America/New_York
             - ZWAVEJS_EXTERNAL_CONFIG=/usr/src/app/store/.config-db
-        network_mode: host
         devices:
             # Do not use /dev/ttyUSBX serial devices, as those mappings can change over time.
             # Instead, use the /dev/serial/by-id/X serial device for your Z-Wave stick.
@@ -46,7 +45,6 @@ services:
         volumes:
             - ./config/zigbee:/app/data
             - /run/udev:/run/udev:ro
-        network_mode: host
         ports:
             # Frontend port
             - 8092:8080
@@ -65,7 +63,6 @@ services:
             - TZ=America/New_York
         volumes:
             - ./config/mqtt:/mosquitto/config/
-        network_mode: host
         ports:
             - "1883:1883"
             - "9001:9001"
@@ -117,7 +114,6 @@ services:
             - DUCKDNSTOKEN=${DUCKDNS_TOKEN}
             - SUBDOMAINS=wildcard
             - TZ=America/New_York
-        network_mode: host
         ports:
             - "443:443"
             - "80:80"
