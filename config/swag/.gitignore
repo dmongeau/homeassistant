@@ -8,7 +8,7 @@ nginx/*
 
 !nginx/proxy-confs
 nginx/proxy-confs/*
-!nginx/proxy-confs/ha.subdomain.conf
+!nginx/proxy-confs/homeassistant.subdomain.conf
 
 
 !nginx/site-confs
