@@ -41,9 +41,9 @@ services:
         environment:
             - TZ=America/New_York
         volumes:
-            - ./volumes/mosquitto/config:/mosquitto/config
-            - ./volumes/mosquitto/data:/mosquitto/data
-            - ./volumes/mosquitto/log:/mosquitto/log
+            - ./config/mosquitto/config:/mosquitto/config
+            - ./config/mosquitto/data:/mosquitto/data
+            - ./config/mosquitto/log:/mosquitto/log
         ports:
             - "1883:1883"
             - "9001:9001"
@@ -52,7 +52,7 @@ services:
         image: deconzcommunity/deconz:stable
         restart: unless-stopped
         volumes:
-            - ./volumes/deconz:/opt/deCONZ
+            - ./config/deconz:/opt/deCONZ
         devices:
             - ${ZIGBEE_DEVICE}:/dev/ttyACM0
         environment:
