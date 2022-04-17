@@ -9,8 +9,7 @@ services:
             - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
         environment:
             - TZ=America/New_York
-        networks:
-            - host
+        network_mode: host
         depends_on:
             - swag
             - mqtt
