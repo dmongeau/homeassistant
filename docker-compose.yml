@@ -12,7 +12,6 @@ services:
         depends_on:
             - swag
             - deconz
-            - mqtt
             - zwavejs2mqtt
 
     zwavejs2mqtt:
