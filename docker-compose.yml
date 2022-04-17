@@ -34,26 +34,53 @@ services:
             - "8091:8091" # port for web interface
             - "3000:3000" # port for Z-Wave JS websocket server
 
-    deconz:
-        image: deconzcommunity/deconz:stable
+    zigbee2mqtt:
+        container_name: zigbee2mqtt
+        image: koenkk/zigbee2mqtt
         restart: unless-stopped
         volumes:
-            - ./config/deconz:/opt/deCONZ
-        devices:
-            - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
-        environment:
-            - DECONZ_WEB_PORT=801
-            - DECONZ_WS_PORT=445
-            - DECONZ_VNC_MODE=1
-            - DECONZ_VNC_PORT=5930
-            - DECONZ_VNC_PASSWORD=${DECONZ_VNC_PASSWORD}
-            - DEBUG_INFO=1
-            - DECONZ_UPNP=0
-            - TZ=America/New_York
+            - ./config/zigbee:/app/data
+            - /run/udev:/run/udev:ro
         ports:
-            - "801:801"
-            - "445:445"
-            - "5930:5930"
+            # Frontend port
+            - 8092:8080
+        environment:
+            - TZ=America/Toronto
+        devices:
+            # Make sure this matched your adapter location
+            - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
+
+    mqtt:
+        image: eclipse-mosquitto
+        restart: unless-stopped
+        environment:
+            - TZ=America/New_York
+        volumes:
+            - ./config/mqtt/config:/mosquitto/config
+        ports:
+            - "1883:1883"
+            - "9001:9001"
+
+    # deconz:
+    #     image: deconzcommunity/deconz:stable
+    #     restart: unless-stopped
+    #     volumes:
+    #         - ./config/deconz:/opt/deCONZ
+    #     devices:
+    #         - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
+    #     environment:
+    #         - DECONZ_WEB_PORT=801
+    #         - DECONZ_WS_PORT=445
+    #         - DECONZ_VNC_MODE=1
+    #         - DECONZ_VNC_PORT=5930
+    #         - DECONZ_VNC_PASSWORD=${DECONZ_VNC_PASSWORD}
+    #         - DEBUG_INFO=1
+    #         - DECONZ_UPNP=0
+    #         - TZ=America/New_York
+    #     ports:
+    #         - "801:801"
+    #         - "445:445"
+    #         - "5930:5930"
 
     duckdns:
         image: linuxserver/duckdns:arm32v7-latest
