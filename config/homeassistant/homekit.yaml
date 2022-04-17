@@ -13,6 +13,7 @@
           - sensor.capteur_salon_temperature
           - sensor.capteur_salon_humidity
           - sensor.capteur_salon_illuminance
+          - binary_sensor.capteur_salon_motion
 - name: "Camera 1"
   mode: accessory
   port: 21064

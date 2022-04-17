@@ -40,3 +40,5 @@ sensor.capteur_salon_battery_level:
   friendly_name: "Niveau de la batterie"
 binary_sensor.capteur_salon_low_battery_level:
   friendly_name: "Batterie faible"
+binary_sensor.capteur_salon_motion:
+  friendly_name: "Mouvement"
