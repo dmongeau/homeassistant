@@ -51,7 +51,7 @@ services:
             - TZ=America/Toronto
         devices:
             # Make sure this matched your adapter location
-            - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
+            - ${ZIGBEE_DEVICE}:/dev/ttyACM0
         depends_on:
             - mqtt
 
