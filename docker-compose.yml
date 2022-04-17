@@ -125,5 +125,3 @@ networks:
             driver: default
             config:
                 - subnet: 172.16.0.0/16
-    host:
-        driver: host
