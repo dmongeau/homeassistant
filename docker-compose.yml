@@ -11,8 +11,9 @@ services:
             - TZ=America/New_York
         depends_on:
             - swag
-            - deconz
+            - mqtt
             - zwavejs2mqtt
+            - zigbee2mqtt
 
     zwavejs2mqtt:
         container_name: zwavejs2mqtt
@@ -33,6 +34,8 @@ services:
         ports:
             - "8091:8091" # port for web interface
             - "3000:3000" # port for Z-Wave JS websocket server
+        depends_on:
+            - mqtt
 
     zigbee2mqtt:
         container_name: zigbee2mqtt
@@ -49,6 +52,8 @@ services:
         devices:
             # Make sure this matched your adapter location
             - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
+        depends_on:
+            - mqtt
 
     mqtt:
         image: eclipse-mosquitto
