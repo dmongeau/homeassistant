@@ -2,6 +2,10 @@ sensor.et_wv525_kib_s_received:
   friendly_name: "Données reçues par le routeur"
 sensor.et_wv525_kib_s_sent:
   friendly_name: "Données envoyées par le routeur"
+sensor.et_wv525_external_ip:
+  friendly_name: "IP Externe"
+binary_sensor.et_wv525_wan_status:
+  friendly_name: "Internet"
 
 camera.camera1:
   friendly_name: "Caméra 1"
