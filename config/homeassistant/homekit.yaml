@@ -2,6 +2,8 @@
   port: 21063
   filter:
       include_entities:
+          - climate.thermostat_salon
+          - sensor.thermostat_salon_temperature
           - climate.thermostat_salle_de_bain
           - sensor.thermostat_salle_de_bain_temperature
           - climate.thermostat_salle_de_bain_2

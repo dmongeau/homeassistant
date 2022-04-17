@@ -6,6 +6,10 @@ camera.camera1:
   friendly_name: "Caméra 1"
 camera.camera2:
   friendly_name: "Caméra 2"
+climate.thermostat_salon:
+  friendly_name: "Thermostat"
+sensor.thermostat_salon_temperature:
+  friendly_name: "Température"
 climate.thermostat_salle_de_bain:
   friendly_name: "Thermostat"
 sensor.thermostat_salle_de_bain_temperature:
