@@ -13,7 +13,7 @@ homeassistant:
 
 # MQTT
 mqtt:
-    broker: mqtt
+    broker: localhost
 
 # Text to speech
 tts:
