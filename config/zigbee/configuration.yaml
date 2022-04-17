@@ -4,6 +4,7 @@ mqtt:
     server: mqtt://mqtt:1883
 serial:
     port: /dev/zigbee
+    adapter: deconz
 frontend:
     port: 8080
 homeassistant: true
