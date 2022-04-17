@@ -5,7 +5,7 @@ default_config:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 172.16.0.0/12
+    - 172.16.0.0/16
 
 homeassistant:
     external_url: https://homeassistant.panet-chalet.duckdns.org
