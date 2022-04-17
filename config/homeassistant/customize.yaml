@@ -2,23 +2,41 @@ sensor.et_wv525_kib_s_received:
   friendly_name: "Données reçues par le routeur"
 sensor.et_wv525_kib_s_sent:
   friendly_name: "Données envoyées par le routeur"
+
 camera.camera1:
   friendly_name: "Caméra 1"
 camera.camera2:
   friendly_name: "Caméra 2"
+
 climate.thermostat_salon:
   friendly_name: "Thermostat"
 sensor.thermostat_salon_temperature:
   friendly_name: "Température"
+
 climate.thermostat_salle_de_bain:
   friendly_name: "Thermostat"
 sensor.thermostat_salle_de_bain_temperature:
   friendly_name: "Température"
+
 climate.thermostat_salle_de_bain_2:
   friendly_name: "Thermostat"
 sensor.thermostat_salle_de_bain_2_temperature:
   friendly_name: "Température"
+
 climate.thermostat_vestibule_2:
   friendly_name: "Thermostat"
 sensor.thermostat_vestibule_2_temperature:
   friendly_name: "Température"
+
+sensor.capteur_salon_temperature:
+  friendly_name: "Température"
+sensor.capteur_salon_humidity:
+  friendly_name: "Humidité"
+sensor.capteur_salon_illuminance:
+  friendly_name: "Luminosité"
+sensor.capteur_salon_ultraviolet:
+  friendly_name: "UV"
+sensor.capteur_salon_battery_level:
+  friendly_name: "Niveau de la batterie"
+binary_sensor.capteur_salon_low_battery_level:
+  friendly_name: "Batterie faible"
