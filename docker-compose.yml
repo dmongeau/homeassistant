@@ -9,6 +9,10 @@ services:
             - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
         environment:
             - TZ=America/New_York
+        ports:
+            - "21063:21063"
+            - "21064:21064"
+            - "21065:21065"
         depends_on:
             - swag
             - mqtt

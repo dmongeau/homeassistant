@@ -1,4 +1,5 @@
 - name: "Home Assistant"
+  port: 21063
   filter:
       include_entities:
           - climate.thermostat_salle_de_bain
