@@ -9,10 +9,9 @@ services:
             - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
         environment:
             - TZ=America/New_York
-        ports:
-            - "21063:21063"
-            - "21064:21064"
-            - "21065:21065"
+        networks:
+            - default
+            - host
         depends_on:
             - swag
             - mqtt
@@ -128,3 +127,5 @@ networks:
             driver: default
             config:
                 - subnet: 172.16.0.0/16
+    host:
+        driver: host
