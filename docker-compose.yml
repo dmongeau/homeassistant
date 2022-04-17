@@ -6,7 +6,7 @@ services:
         volumes:
             - ./config/homeassistant:/config
         devices:
-            - ${ZIGBEE_DEVICE}:/dev/ttyACM0
+            - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
         environment:
             - TZ=America/New_York
         depends_on:
@@ -54,7 +54,7 @@ services:
         volumes:
             - ./config/deconz:/opt/deCONZ
         devices:
-            - ${ZIGBEE_DEVICE}:/dev/ttyACM0
+            - ${ZIGBEE_DEVICE}:/dev/ttyAMA0
         environment:
             - DECONZ_WEB_PORT=801
             - DECONZ_WS_PORT=445
