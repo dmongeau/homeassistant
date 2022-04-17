@@ -1,7 +1,7 @@
 # Minimal configuration.yml example
 permit_join: true
 mqtt:
-    server: mqtt://localhost:1883
+    server: mqtt://mqtt:1883
 serial:
     port: /dev/zigbee
     adapter: deconz
