@@ -61,7 +61,7 @@ services:
         environment:
             - TZ=America/New_York
         volumes:
-            - ./config/mqtt/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+            - ./config/mqtt:/mosquitto/config/
         ports:
             - "1883:1883"
             - "9001:9001"
