@@ -6,3 +6,4 @@ serial:
     port: /dev/zigbee
 frontend:
     port: 8080
+homeassistant: true
