@@ -15,37 +15,37 @@ camera.camera2:
 climate.thermostat_salon:
   friendly_name: "Thermostat"
 sensor.thermostat_salon_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 climate.thermostat_salle_de_bain:
   friendly_name: "Thermostat"
 sensor.thermostat_salle_de_bain_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 climate.thermostat_chambre:
   friendly_name: "Thermostat"
 sensor.thermostat_chambre_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 climate.thermostat_salle_de_bain_2:
   friendly_name: "Thermostat"
 sensor.thermostat_salle_de_bain_2_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 climate.thermostat_vestibule_2:
   friendly_name: "Thermostat"
 sensor.thermostat_vestibule_2_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 climate.thermostat_sous_sol_centre:
   friendly_name: "Thermostat"
 sensor.thermostat_sous_sol_centre_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 climate.thermostat_sous_sol_fenetre:
   friendly_name: "Thermostat"
 sensor.thermostat_sous_sol_fenetre_temperature:
-  friendly_name: "Température"
+  friendly_name: "Température (Thermostat)"
 
 sensor.capteur_salon_temperature:
   friendly_name: "Température"
