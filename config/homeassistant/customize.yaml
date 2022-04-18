@@ -37,6 +37,16 @@ climate.thermostat_vestibule_2:
 sensor.thermostat_vestibule_2_temperature:
   friendly_name: "Température"
 
+climate.thermostat_sous_sol_centre:
+  friendly_name: "Thermostat"
+sensor.thermostat_sous_sol_centre_temperature:
+  friendly_name: "Température"
+
+climate.thermostat_sous_sol_fenetre:
+  friendly_name: "Thermostat"
+sensor.thermostat_sous_sol_fenetre_temperature:
+  friendly_name: "Température"
+
 sensor.capteur_salon_temperature:
   friendly_name: "Température"
 sensor.capteur_salon_humidity:
@@ -63,4 +73,19 @@ sensor.capteur_vestibule_2_battery_level:
 binary_sensor.capteur_vestibule_2_low_battery_level:
   friendly_name: "Batterie faible"
 binary_sensor.capteur_vestibule_2_motion:
+  friendly_name: "Mouvement"
+
+sensor.capteur_sous_sol_temperature:
+  friendly_name: "Température"
+sensor.capteur_sous_sol_humidity:
+  friendly_name: "Humidité"
+sensor.capteur_sous_sol_illuminance:
+  friendly_name: "Luminosité"
+sensor.capteur_sous_sol_ultraviolet:
+  friendly_name: "UV"
+sensor.capteur_sous_sol_battery_level:
+  friendly_name: "Niveau de la batterie"
+binary_sensor.capteur_sous_sol_low_battery_level:
+  friendly_name: "Batterie faible"
+binary_sensor.capteur_sous_sol_motion:
   friendly_name: "Mouvement"
