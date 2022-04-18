@@ -51,3 +51,16 @@ binary_sensor.capteur_salon_low_battery_level:
   friendly_name: "Batterie faible"
 binary_sensor.capteur_salon_motion:
   friendly_name: "Mouvement"
+
+sensor.capteur_vestibule_2_temperature:
+  friendly_name: "Température"
+sensor.capteur_vestibule_2_humidity:
+  friendly_name: "Humidité"
+sensor.capteur_vestibule_2_illuminance:
+  friendly_name: "Luminosité"
+sensor.capteur_vestibule_2_battery_level:
+  friendly_name: "Niveau de la batterie"
+binary_sensor.capteur_vestibule_2_low_battery_level:
+  friendly_name: "Batterie faible"
+binary_sensor.capteur_vestibule_2_motion:
+  friendly_name: "Mouvement"

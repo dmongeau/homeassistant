@@ -16,6 +16,10 @@
           - sensor.capteur_salon_humidity
           - sensor.capteur_salon_illuminance
           - binary_sensor.capteur_salon_motion
+          - sensor.capteur_vestibule_2_temperature
+          - sensor.capteur_vestibule_2_humidity
+          - sensor.capteur_vestibule_2_illuminance
+          - binary_sensor.capteur_vestibule_2_motion
 - name: "Camera 1"
   mode: accessory
   port: 21064
