@@ -2,4 +2,4 @@ FROM alpine/git:latest
 
 ARG REPO
 
-RUN ["git", "clone", $REPO]
+RUN ["git", "clone", $REPO, "/git"]
