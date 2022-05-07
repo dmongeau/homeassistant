@@ -3,4 +3,4 @@ FROM alpine/git:latest
 ARG REPO
 VOLUME /git
 
-RUN if [[! -d "/git" ]] ; then git clone $REPO; else echo "Argument is $REPO" ; fi
+RUN if [[! -d "/git/.git" ]] ; then git clone $REPO; else cd /git && git pull ; fi
