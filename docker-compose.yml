@@ -6,7 +6,7 @@ services:
             dockerfile: Dockerfile-git
         command: clone ${HASS_CONFIG_REPOSITORY} /git
         volumes:
-            - $HOME/.ssh:/root/.ssh
+            - ${HOME}/.ssh:/root/.ssh
             - ./config/hass:/git
 
     homeassistant:
@@ -18,7 +18,6 @@ services:
             - TZ=America/Toronto
         network_mode: host
         depends_on:
-            - config
             - swag
             - mqtt
             - zwavejs2mqtt
