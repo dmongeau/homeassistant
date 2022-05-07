@@ -4,7 +4,7 @@ services:
         build:
             context: ./
             dockerfile: Dockerfile-git
-        command: clone ${HASS_CONFIG_REPOSITORY} /git
+        #command: clone ${HASS_CONFIG_REPOSITORY} /git
         volumes:
             - "${HOME}/.ssh:/root/.ssh"
             - ./config/hass:/git
