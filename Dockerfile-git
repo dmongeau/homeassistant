@@ -1,3 +1,6 @@
 FROM alpine/git:latest
 
-CMD ["git", "version"]
+ARG REPO
+
+# CMD ["git", "version"]
+RUN git clone ${REPO} /git
