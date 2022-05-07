@@ -1,6 +1,3 @@
 FROM alpine/git:latest
 
-ARG REPO
-VOLUME /git
-
-RUN if [[! -d "/git/.git" ]] ; then git clone $REPO /git; else git clone $REPO /git; fi
+CMD ["git", "version"]
