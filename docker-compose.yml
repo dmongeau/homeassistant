@@ -6,7 +6,7 @@ services:
             dockerfile: Dockerfile-git
         command: "clone ${HASS_CONFIG_REPOSITORY} /git"
         volumes:
-            - ${HOME}/.ssh:/root/.ssh
+            - /home/pi/.ssh:/root/.ssh
             - ./config/hass:/git
 
     homeassistant:
