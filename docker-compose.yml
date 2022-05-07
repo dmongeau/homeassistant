@@ -2,7 +2,7 @@ version: "3"
 services:
     config:
         build:
-            context: ./config/hass
+            context: ./
             dockerfile: Dockerfile-git
         command: clone ${HASS_CONFIG_REPOSITORY} /git
         volumes:
