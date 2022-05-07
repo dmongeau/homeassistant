@@ -2,12 +2,12 @@ version: "3"
 services:
     config:
         build:
-            context: ./
+            context: ./config/hass
             dockerfile: Dockerfile-git
         command: clone ${HASS_CONFIG_REPOSITORY} /git
-        #volumes:
-            #- "${HOME}/.ssh:/root/.ssh"
-            #- ./config/hass:/git
+        volumes:
+            - "${HOME}/.ssh:/root/.ssh"
+            - ./config/hass:/git
 
     homeassistant:
         image: homeassistant/raspberrypi4-homeassistant:stable
