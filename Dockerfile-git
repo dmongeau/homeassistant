@@ -3,4 +3,4 @@ FROM alpine/git:latest
 ARG REPO
 VOLUME /git
 
-RUN "[! -d '/git'] git clone $REPO /git"
+RUN if [[! -d "/git" ]] ; then git clone $REPO; else echo Argument is $arg ; fi
