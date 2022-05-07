@@ -1,5 +1,7 @@
 FROM alpine/git:latest
 
 ARG REPO
+VOLUME /git
+VOLUME /root/.ssh
 
 RUN git clone $REPO /git
