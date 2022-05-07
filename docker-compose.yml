@@ -7,7 +7,7 @@ services:
         command: clone ${HASS_CONFIG_REPOSITORY} /git
         volumes:
             #- "${HOME}/.ssh:/root/.ssh"
-            - ./config/hass:/git
+            #- ./config/hass:/git
 
     homeassistant:
         image: homeassistant/raspberrypi4-homeassistant:stable
