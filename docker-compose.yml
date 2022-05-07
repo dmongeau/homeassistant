@@ -4,7 +4,9 @@ services:
         build:
             context: ./
             dockerfile: Dockerfile-git
-        command: clone ${HASS_CONFIG_REPOSITORY} /git
+        command:
+            - [ ! -d "/git" ] && clone ${HASS_CONFIG_REPOSITORY} /git
+            - [ -d "/git" ] && cd /git && pull origin master
         volumes:
             - ${HOME}/.ssh:/root/.ssh
             - ./config/hass:/git
