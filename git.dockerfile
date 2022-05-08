@@ -10,4 +10,4 @@ RUN ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
 
 # WORKDIR /git
 ENTRYPOINT []
-CMD ["sh","-c","git clone ${REPO} /git && cd /git && git pull"]
+CMD ["sh","-c","git clone ${REPO} /git || (cd /git && git pull)"]
