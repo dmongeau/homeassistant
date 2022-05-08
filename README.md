@@ -1,5 +1,11 @@
 # Home Assistant
 
+## Create ssh key
+$ cd ~/homeassistant
+$ ssh-keygen -t rsa -b 4096 -C "email@email.com" -f ./.ssh/id_rsa
+
+Add it to deploy key
+
 ## Start Services
 
 - Start docker-compose
