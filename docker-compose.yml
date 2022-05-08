@@ -5,7 +5,7 @@ services:
             context: ./
             dockerfile: git.dockerfile
         # command: clone ${HASS_CONFIG_REPOSITORY} /git
-        command: clone ${HASS_CONFIG_REPOSITORY} /git || pull
+        # command: clone ${HASS_CONFIG_REPOSITORY} /git || pull
         volumes:
             - ./config/hass:/git
 
