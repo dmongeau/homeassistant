@@ -9,4 +9,4 @@ RUN ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
 # VOLUME /git
 
 # WORKDIR /git
-ENTRYPOINT ["/bin/ash"]
+ENTRYPOINT []
