@@ -1,8 +1,9 @@
 FROM alpine/git:latest
 
 ARG REPO
-VOLUME /root/.ssh
-VOLUME /git
+ARG PRIVATE_KEY_PATH
+ADD ${PRIVATE_KEY_PATH} /root/.ssh/id_rsa
 
 # CMD ["git", "version"]
+RUN export GIT_SSH_COMMAND='ssh -i /root/.ssh/id_rsa -o "StrictHostKeyChecking=no"'
 RUN git clone ${REPO} /git

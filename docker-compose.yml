@@ -6,10 +6,11 @@ services:
             dockerfile: Dockerfile-git
             args:
                 REPO: ${HASS_CONFIG_REPOSITORY}
+                PRIVATE_KEY_PATH: /home/pi/.ssh/id_rsa_config
         # command: "clone ${HASS_CONFIG_REPOSITORY} /git"
         volumes:
-            - /home/pi/.ssh:/root/.ssh
             - ./config/hass:/git
+            #- /home/pi/.ssh:/root/.ssh
 
     homeassistant:
         image: homeassistant/raspberrypi4-homeassistant:stable
