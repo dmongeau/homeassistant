@@ -6,3 +6,5 @@ volumes/mosquitto/
 volumes/swag/
 volumes/zwavejs/
 volumes/hass/
+
+.ssh

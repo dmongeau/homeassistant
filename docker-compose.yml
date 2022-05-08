@@ -3,10 +3,9 @@ services:
     config:
         build:
             context: ./
-            dockerfile: Dockerfile-git
+            dockerfile: git.dockerfile
             args:
                 REPO: ${HASS_CONFIG_REPOSITORY}
-                SSH_PRIVATE_KEY: "$(cat /home/pi/.ssh/id_rsa_config)"
         # command: "clone ${HASS_CONFIG_REPOSITORY} /git"
         volumes:
             - ./config/hass:/git
