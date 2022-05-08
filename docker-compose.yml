@@ -6,7 +6,7 @@ services:
             dockerfile: git.dockerfile
             args:
                 REPO: ${HASS_CONFIG_REPOSITORY}
-        command: "pull"
+        # command: "pull"
         volumes:
             - ./config/hass:/git
 
