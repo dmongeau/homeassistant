@@ -1,6 +1,8 @@
 FROM alpine/git:latest
 
 ARG REPO
+
+RUN mkdir /git
 VOLUME /git
 
 ADD .ssh/id_rsa /root/.ssh/id_rsa
