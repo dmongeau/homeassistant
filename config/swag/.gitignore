@@ -9,6 +9,7 @@ nginx/*
 !nginx/proxy-confs
 nginx/proxy-confs/*
 !nginx/proxy-confs/homeassistant.subdomain.conf
+!nginx/proxy-confs/camera1.subdomain.conf
 
 
 !nginx/site-confs
