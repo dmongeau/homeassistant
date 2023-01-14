@@ -90,7 +90,7 @@ services:
     swag:
         image: linuxserver/swag:arm32v7-latest
         restart: unless-stopped
-        # network_mode: host
+        network_mode: host
         cap_add:
             - NET_ADMIN
         volumes:
@@ -105,9 +105,9 @@ services:
             - DUCKDNSTOKEN=${DUCKDNS_TOKEN}
             - SUBDOMAINS=wildcard
             - TZ=America/New_York
-        ports:
-            - "443:443"
-            - "80:80"
+        # ports:
+        #     - "443:443"
+        #     - "80:80"
         depends_on:
             - duckdns
             - homeassistant
