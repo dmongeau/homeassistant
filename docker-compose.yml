@@ -90,7 +90,7 @@ services:
     swag:
         image: linuxserver/swag:arm32v7-latest
         restart: unless-stopped
-        network: host
+        network_mode: host
         cap_add:
             - NET_ADMIN
         volumes:
