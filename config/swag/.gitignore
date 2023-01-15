@@ -15,4 +15,4 @@ nginx/proxy-confs/*
 
 !nginx/site-confs
 nginx/site-confs/*
-!nginx/site-confs/default.conf
+!nginx/site-confs/default
